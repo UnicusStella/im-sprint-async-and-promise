@@ -1,1 +1,1 @@
-# im-sprint-async-and-promise
+# async-and-promise
