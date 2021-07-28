@@ -10,13 +10,13 @@ function getNewsAndWeather() {
     resolve(
       fetch(newsURL)
         .then((response) => response.json())
-        .then((newsInfo) =>
+        .then((newsData) =>
           fetch(weatherURL)
             .then((response) => response.json())
             .then((weather) => {
-              newsInfo.news = newsInfo.data;
-              delete newsInfo.data;
-              let obj = { ...newsInfo, weather };
+              newsData.news = newsData.data;
+              delete newsData.data;
+              let obj = { ...newsData, weather };
               console.log(obj);
               return obj;
             })
