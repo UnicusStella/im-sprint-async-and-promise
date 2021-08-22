@@ -3,6 +3,10 @@ var weatherURL = 'http://localhost:5000/data/weather';
 
 async function getNewsAndWeatherAsync() {
   // TODO: async/await 키워드를 이용해 작성합니다
+  const data1 = await fetch(newsURL).then((data) => data.json());
+  const data2 = await fetch(weatherURL).then((data) => data.json());
+
+  return { news: data1.data, weather: data2 };
 }
 
 if (typeof window === 'undefined') {
