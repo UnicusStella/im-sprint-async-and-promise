@@ -31,22 +31,14 @@ function runPromise() {
   playVideo();
 
   sleep(1000)
-    .then((param) => {
-      console.log(param);
+    .then(() => {
       pauseVideo();
       displayTitle();
-      return 'world';
     })
-    .then((param) => {
-      console.log(param);
-      sleep(500);
-    })
+    .then(sleep.bind(null, 500))
     .then(highlightTitle)
     .then(sleep.bind(null, 2000))
-    .then(resetTitle)
-    .catch((err) => {
-      console.log(err);
-    });
+    .then(resetTitle);
 }
 
 async function runAsync() {
