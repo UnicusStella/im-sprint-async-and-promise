@@ -38,7 +38,10 @@ function runPromise() {
     .then(sleep.bind(null, 500))
     .then(highlightTitle)
     .then(sleep.bind(null, 2000))
-    .then(resetTitle);
+    .then(resetTitle)
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
 async function runAsync() {
