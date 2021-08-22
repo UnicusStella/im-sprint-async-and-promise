@@ -10,7 +10,7 @@ const readAllUsersChaining = () => {
   return getDataFromFilePromise(user1Path)
     .then((user1) => {
       return getDataFromFilePromise(user2Path).then((user2) => {
-        return '[' + user1 + ',' + user2 + ']';
+        return `[${user1},${user2}]`;
       });
     })
     .then((text) => JSON.parse(text));
